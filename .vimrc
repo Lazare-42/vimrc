@@ -1,5 +1,4 @@
 set nocompatible
-
 filetype indent on
 syntax enable
 set encoding=utf-8
@@ -23,8 +22,7 @@ set shiftwidth=4
 "Shortcuts"
 inoremap <F5> <esc>:w<cr>
 noremap <F5> <esc>:w<cr>
-inoremap <F6> <esc>:x <cr>
-noremap <F6> <esc>:x <cr>
+inoremap <special> jk <ESC>
 :map <F7> <esc>:q! <cr>
 :map <F7> <esc>:q! <cr>
 :map <F2> <Esc>:tabnew 
