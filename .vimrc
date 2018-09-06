@@ -24,10 +24,13 @@ inoremap <F5> <esc>:w<cr>
 noremap <F5> <esc>:w<cr>
 inoremap <special> jk <ESC>
 :map <F7> <esc>:q! <cr>
-:map <F7> <esc>:q! <cr>
+:imap <F7> <esc>:q! <cr>
 :map <F2> <Esc>:tabnew 
+:imap <F2> <Esc>:tabnew 
 :map <F3> <esc>:tabprevious<cr>
+:imap <F3> <esc>:tabprevious<cr>
 :map <F4> <esc>:tabnext<cr>
+:imap <F4> <esc>:tabnext<cr>
 
 "Syntastic ////////////////////////////////////////////////////////////////////
 execute pathogen#infect()
