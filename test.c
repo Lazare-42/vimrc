@@ -1,0 +1,6 @@
+
+
+int main()
+{
+	fprintf(lol);
+}
