@@ -16,21 +16,27 @@ set ruler
 set ignorecase
 set hlsearch
 colorscheme Atelier_SulphurpoolLight
-"set background=blue
+
+" Replace tabs with 4 spaces [I see you Python]
 set tabstop=4
 set shiftwidth=4
 
-"Shortcuts"
-inoremap <F5> <esc>:w<cr>
-noremap <F5> <esc>:w<cr>
+" Of course you remap jk :)   
 :imap jk <Esc>
 :imap JK <Esc>
-:map <F7> <esc>:q <cr>
-:map <F7> <esc>:q <cr>
-:map <F2> <Esc>:tabnew 
-:map <F3> <esc>:tabprevious<cr>
-:map <F4> <esc>:tabnext<cr>
-:map <F8> <esc>:vs 
+
+" faster tabnavigation with CONTROL-[letter]
+map         <C-h> :tabprevious<CR>
+map         <C-l> :tabnext<CR>
+map         <C-n> :tabnew 
+
+" faster file saving with CONTROL-f
+inoremap    <C-f> <esc>:w<cr>
+noremap     <C-f> <esc>:w<cr>
+
+" replace command no-highlit with hitting three times v
+inoremap    vvv <esc>:noh<cr> 
+noremap     vvv <esc>:noh<cr> 
 
 "Haskell ghc-mod"
 "map <silent> tw :GhcModTypeInsert<CR>
@@ -60,13 +66,17 @@ let g:syntastic_c_include_dirs = ['../../../include', '../../include','../includ
 let g:syntastic_c_compiler_options ='-Wall -Werror -Wextra -fsanitize=address -C99 -pedantic -fno-stack-protecto -ftest-coverage -fsanitize=address' 
 "//////////////////////////////////////////////////////////////////////////////
 "
-"Vimtex
+
+"""
+"""     VIMTEX
+"""
+""" [of course you need latexmk]
 let g:tex_flavor = "latex"
 let g:tex_conceal = ""
 let g:tex_fold_enabled = 0
 let g:tex_comment_nospell = 1
-let g:vimtex_view_method = 'skim'
-let g:livepreview_previewer = 'open -a Skim'
+let g:vimtex_view_method = 'zathoura'
+let g:livepreview_previewer = 'zathoura'
 let g:vimtex_compiler_latexmk = {
         \ 'backend' : 'jobs',
         \ 'background' : 1,
@@ -82,3 +92,18 @@ let g:vimtex_compiler_latexmk = {
         \   '-interaction=nonstopmode',
         \ ],
         \}
+
+"""
+"""     NERDTREE
+"""
+"Show hidden files
+"Open nerd tree with tab toggler on opening VIM 
+autocmd VimEnter *  NERDTreeTabsOpen
+autocmd VimEnter * wincmd p
+
+" remap CONTROL-N to NERDTreeTabsToggle
+nmap <C-a> :NERDTreeTabsToggle <CR> 
+
+" Hide help
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
