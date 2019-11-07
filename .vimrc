@@ -17,6 +17,9 @@ set ignorecase
 set hlsearch
 colorscheme Atelier_SulphurpoolLight
 
+" Store swap files in home directory
+set directory^=$HOME/.vim/tmp//
+
 " Replace tabs with 4 spaces [I see you Python]
 set tabstop=4
 set shiftwidth=4
@@ -75,8 +78,8 @@ let g:tex_flavor = "latex"
 let g:tex_conceal = ""
 let g:tex_fold_enabled = 0
 let g:tex_comment_nospell = 1
-let g:vimtex_view_method = 'zathoura'
-let g:livepreview_previewer = 'zathoura'
+let g:vimtex_view_method = 'zathura'
+let g:livepreview_previewer = 'zathura'
 let g:vimtex_compiler_latexmk = {
         \ 'backend' : 'jobs',
         \ 'background' : 1,
