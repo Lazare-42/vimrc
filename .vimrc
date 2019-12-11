@@ -15,6 +15,8 @@ set showmatch
 set ruler
 set ignorecase
 set hlsearch
+let mapleader="["
+let localmapleader="["
 colorscheme Atelier_SulphurpoolLight
 
 " Store swap files in home directory
@@ -47,7 +49,9 @@ noremap     vvv <esc>:noh<cr>
 "map <silent> tq :GhcModType<CR>
 "map <silent> te :GhcModTypeClear<CR>
 "locate ghc-mod executable"
-"let $PATH = $PATH . ':' . expand ('~/.local/bin/')
+let $PATH = $PATH . ':' . expand ('~/.local/bin/')
+autocmd BufNewFile,BufRead *.y setfiletype haskell
+autocmd filetype haskell setlocal smarttab softtabstop=2 shiftwidth=2 expandtab tabstop=2
 
 "Syntastic ////////////////////////////////////////////////////////////////////
 call pathogen#infect()
